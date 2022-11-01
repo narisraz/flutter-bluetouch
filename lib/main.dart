@@ -17,6 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
         colorScheme: lightColorScheme,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.all(16)
+          )
+        )
       ),
       darkTheme: ThemeData(
         colorScheme: darkColorScheme
@@ -26,32 +31,72 @@ class MyApp extends StatelessWidget {
           children: [
             const LeftDrawer(),
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Column(
+                children: [
+                  const BtAppBar(),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Text('SAEP', style: Theme.of(context).textTheme.titleMedium),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Naris Razafimahatratra', style: Theme.of(context).textTheme.titleMedium,),
-                            const SizedBox(
-                              width: 8,
-                            ),
-                            const CircleAvatar()
+                            Text('Liste des SAEP', style: Theme.of(context).textTheme.titleLarge,),
+                            ElevatedButton.icon(onPressed: () {}, label: const Text('Nouveau'), icon: const Icon(Icons.add),)
                           ],
+                        ),
+                        const SizedBox(height: 16,),
+                        Card(
+                          child: DataTable(columns: const [
+                            DataColumn(label: Text('Nom')),
+                            DataColumn(label: Expanded(child: Text('Actions', textAlign: TextAlign.end,))),
+                          ], rows: [
+                            DataRow(cells: [
+                              const DataCell(Text('1')),
+                              DataCell(Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  IconButton(onPressed: () {}, icon: const Icon(Icons.remove_red_eye_outlined)),
+                                  IconButton(onPressed: () {}, icon: const Icon(Icons.edit_outlined)),
+                                  IconButton(onPressed: () {}, icon: const Icon(Icons.delete_outline)),
+                                ],
+                              ))
+                            ])
+                          ]),
                         )
                       ],
                     ),
-                  ],
-                ),
-              ),
+                  )
+                ],
+              )
             )
           ],
         ),
       ),
+    );
+  }
+}
+
+class BtAppBar extends StatelessWidget {
+  const BtAppBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: const Text('SAEP'),
+      actions: [
+        Row(
+          children: const [
+            Text('Naris'),
+            SizedBox(width: 8,),
+            CircleAvatar(),
+            SizedBox(width: 16,),
+          ],
+        )
+      ],
     );
   }
 }
@@ -65,11 +110,12 @@ class LeftDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        children: const [
-          DrawerHeader(child: Text('data')),
+        children: [
+          const DrawerHeader(child: FlutterLogo()),
           ListTile(
-            leading: Icon(Icons.water_damage),
-            title: Text('SAEP'),
+            onTap: () {},
+            leading: const Icon(Icons.water_damage),
+            title: const Text('SAEP'),
           )
         ],
       ),
