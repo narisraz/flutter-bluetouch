@@ -14,15 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bluetouch',
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          colorSchemeSeed: Colors.blue,
-          scaffoldBackgroundColor: Colors.grey.shade100,
-          appBarTheme: AppBarTheme(
-            backgroundColor: Colors.grey.shade100,
-          ),
-          cardTheme: const CardTheme(surfaceTintColor: Colors.white)),
+        useMaterial3: true,
+        brightness: Brightness.light,
+        colorSchemeSeed: Colors.blue,
+      ),
       darkTheme: ThemeData(
           useMaterial3: true,
           brightness: Brightness.dark,

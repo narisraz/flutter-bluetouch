@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ListSaep extends StatelessWidget {
@@ -16,8 +17,12 @@ class ListSaep extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'SAEP',
+                Row(
+                  children: const [
+                    Text(
+                      'SAEP',
+                    ),
+                  ],
                 ),
                 TextButton.icon(
                   onPressed: () {},
