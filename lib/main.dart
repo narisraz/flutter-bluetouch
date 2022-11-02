@@ -1,4 +1,3 @@
-import 'package:bluetouch/color_schemes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,72 +15,88 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       theme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.light,
-        colorSchemeSeed: Colors.blue,
-        scaffoldBackgroundColor: Colors.grey.shade100,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.grey.shade100,
-        ),
-        cardTheme: const CardTheme(
-          surfaceTintColor: Colors.white
-        )
-      ),
+          useMaterial3: true,
+          brightness: Brightness.light,
+          colorSchemeSeed: Colors.blue,
+          scaffoldBackgroundColor: Colors.grey.shade100,
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.grey.shade100,
+          ),
+          cardTheme: const CardTheme(surfaceTintColor: Colors.white)),
       darkTheme: ThemeData(
           useMaterial3: true,
           brightness: Brightness.dark,
-          colorSchemeSeed: Colors.blue
-      ),
+          colorSchemeSeed: Colors.blue),
       home: Scaffold(
         body: Row(
           children: [
             const LeftDrawer(),
             Expanded(
-              child: Column(
-                children: [
-                  const BtAppBar(),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 16 ,16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text('Liste des SAEP', style: Theme.of(context).textTheme.titleLarge,),
-                                TextButton.icon(onPressed: () {}, label: const Text('Nouveau'), icon: const Icon(Icons.add),)
-                              ],
-                            ),
+                child: Column(
+              children: [
+                const BtAppBar(),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Liste des SAEP',
+                                style: Theme.of(context).textTheme.titleLarge,
+                              ),
+                              TextButton.icon(
+                                onPressed: () {},
+                                label: const Text('Nouveau'),
+                                icon: const Icon(Icons.add),
+                              )
+                            ],
                           ),
                         ),
-                        const SizedBox(height: 16,),
-                        Card(
-                          child: DataTable(columns: const [
-                            DataColumn(label: Text('Nom')),
-                            DataColumn(label: Expanded(child: Text('Actions', textAlign: TextAlign.end,))),
-                          ], rows: [
-                            DataRow(cells: [
-                              const DataCell(Text('1')),
-                              DataCell(Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  IconButton(onPressed: () {}, icon: const Icon(Icons.remove_red_eye_outlined)),
-                                  IconButton(onPressed: () {}, icon: const Icon(Icons.edit_outlined)),
-                                  IconButton(onPressed: () {}, icon: const Icon(Icons.delete_outline)),
-                                ],
-                              ))
-                            ])
-                          ]),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              )
-            )
+                      ),
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      Card(
+                        child: DataTable(columns: const [
+                          DataColumn(label: Text('Nom')),
+                          DataColumn(
+                              label: Expanded(
+                                  child: Text(
+                            'Actions',
+                            textAlign: TextAlign.end,
+                          ))),
+                        ], rows: [
+                          DataRow(cells: [
+                            const DataCell(Text('1')),
+                            DataCell(Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                        Icons.remove_red_eye_outlined)),
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.edit_outlined)),
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.delete_outline)),
+                              ],
+                            ))
+                          ])
+                        ]),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ))
           ],
         ),
       ),
@@ -102,9 +117,13 @@ class BtAppBar extends StatelessWidget {
         Row(
           children: const [
             Text('Naris'),
-            SizedBox(width: 8,),
+            SizedBox(
+              width: 8,
+            ),
             CircleAvatar(),
-            SizedBox(width: 16,),
+            SizedBox(
+              width: 16,
+            ),
           ],
         )
       ],
