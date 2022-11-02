@@ -11,30 +11,25 @@ class ListSaep extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Card(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: const [
-                    Text(
-                      'SAEP',
-                    ),
-                  ],
-                ),
-                TextButton.icon(
-                  onPressed: () {},
-                  label: const Text('Nouveau'),
-                  icon: const Icon(Icons.add),
-                )
-              ],
-            ),
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: const [
+                  Text(
+                    'SAEP',
+                  ),
+                ],
+              ),
+              ElevatedButton.icon(
+                onPressed: () {},
+                label: const Text('Nouveau'),
+                icon: const Icon(Icons.add),
+              )
+            ],
           ),
-        ),
-        const SizedBox(
-          height: 16,
         ),
         Card(
           child: DataTable(columns: const [
