@@ -1,3 +1,4 @@
+import 'package:bluetouch/components/bt_text_title.dart';
 import 'package:bluetouch/components/bt_textfield.dart';
 // ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
@@ -17,8 +18,8 @@ class ListSaep extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              const Text(
-                'SAEP',
+              const BtTextTitle(
+                title: 'SAEP',
               ),
               const SizedBox(
                 width: 8,
