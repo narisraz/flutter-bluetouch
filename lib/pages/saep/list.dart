@@ -1,3 +1,4 @@
+import 'package:bluetouch/components/bt_textfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,15 +15,19 @@ class ListSaep extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: const [
-                  Text(
-                    'SAEP',
-                  ),
-                ],
+              const Text(
+                'SAEP',
               ),
+              const SizedBox(
+                width: 8,
+              ),
+              const Expanded(
+                child: BtTextField(
+                  prefixIcon: Icon(Icons.search),
+                ),
+              ),
+              const Spacer(),
               ElevatedButton.icon(
                 onPressed: () {},
                 label: const Text('Nouveau'),
