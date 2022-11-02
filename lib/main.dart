@@ -14,17 +14,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bluetouch',
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
+        useMaterial3: true,
         brightness: Brightness.light,
-        colorScheme: lightColorScheme,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.all(16)
-          )
+        colorSchemeSeed: Colors.blue,
+        scaffoldBackgroundColor: Colors.grey.shade100,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.grey.shade100,
+        ),
+        cardTheme: const CardTheme(
+          surfaceTintColor: Colors.white
         )
       ),
       darkTheme: ThemeData(
-        colorScheme: darkColorScheme
+          useMaterial3: true,
+          brightness: Brightness.dark,
+          colorSchemeSeed: Colors.blue
       ),
       home: Scaffold(
         body: Row(
@@ -35,16 +41,21 @@ class MyApp extends StatelessWidget {
                 children: [
                   const BtAppBar(),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16 ,16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Liste des SAEP', style: Theme.of(context).textTheme.titleLarge,),
-                            ElevatedButton.icon(onPressed: () {}, label: const Text('Nouveau'), icon: const Icon(Icons.add),)
-                          ],
+                        Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Liste des SAEP', style: Theme.of(context).textTheme.titleLarge,),
+                                TextButton.icon(onPressed: () {}, label: const Text('Nouveau'), icon: const Icon(Icons.add),)
+                              ],
+                            ),
+                          ),
                         ),
                         const SizedBox(height: 16,),
                         Card(
