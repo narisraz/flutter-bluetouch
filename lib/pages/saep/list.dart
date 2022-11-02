@@ -26,6 +26,7 @@ class ListSaep extends StatelessWidget {
               const Expanded(
                 child: BtTextField(
                   prefixIcon: Icon(Icons.search),
+                  hintText: 'Rechercher...',
                 ),
               ),
               const Spacer(),
