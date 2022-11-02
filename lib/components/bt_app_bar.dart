@@ -8,7 +8,6 @@ class BtAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text('SAEP'),
       actions: [
         Row(
           children: const [
