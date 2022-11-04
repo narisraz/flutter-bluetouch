@@ -32,7 +32,7 @@ class ListSaep extends StatelessWidget {
               const Spacer(),
               ElevatedButton.icon(
                 onPressed: () {
-                  GoRouter.of(context).push("/admin/saep/new");
+                  GoRouter.of(context).go("/admin/saep/new");
                 },
                 label: const Text('Nouveau'),
                 icon: const Icon(Icons.add),

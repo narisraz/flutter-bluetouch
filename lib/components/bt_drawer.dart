@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BtDrawer extends StatelessWidget {
   const BtDrawer({
@@ -8,6 +9,9 @@ class BtDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationRail(
+      onDestinationSelected: (value) => {
+        if (value == 1) {GoRouter.of(context).go('/admin/saep')}
+      },
       extended: true,
       destinations: const [
         NavigationRailDestination(
