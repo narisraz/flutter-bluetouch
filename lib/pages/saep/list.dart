@@ -3,6 +3,7 @@ import 'package:bluetouch/components/bt_textfield.dart';
 // ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ListSaep extends StatelessWidget {
   const ListSaep({
@@ -32,7 +33,9 @@ class ListSaep extends StatelessWidget {
               ),
               const Spacer(),
               ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  GoRouter.of(context).push("/admin/saep/new");
+                },
                 label: const Text('Nouveau'),
                 icon: const Icon(Icons.add),
               )
