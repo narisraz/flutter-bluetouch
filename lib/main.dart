@@ -1,5 +1,5 @@
 import 'package:bluetouch/components/bt_layout.dart';
-import 'package:bluetouch/routes.dart';
+import 'package:bluetouch/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           colorSchemeSeed: Colors.blue,
           dataTableTheme: const DataTableThemeData(
               headingTextStyle: TextStyle(fontWeight: FontWeight.bold))),
-      routerConfig: routes,
+      routerConfig: router,
     );
   }
 }
