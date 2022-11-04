@@ -1,6 +1,7 @@
 import 'package:bluetouch/components/bt_textfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -24,9 +25,28 @@ class NewSaep extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                const BtTextField(
-                  borderRadius: BorderRadius.all(Radius.circular(4)),
-                  label: "Nom de la commune",
+                Row(
+                  children: [
+                    const Flexible(
+                      child: BtTextField(
+                        borderRadius: BorderRadius.all(Radius.circular(4)),
+                        label: "Nom de la commune",
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 16,
+                    ),
+                    Flexible(
+                      child: BtTextField(
+                        inputFormaters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(4)),
+                        label: "Nombre de population",
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(
                   height: 16,
@@ -46,6 +66,43 @@ class NewSaep extends StatelessWidget {
                       child: BtTextField(
                         borderRadius: BorderRadius.all(Radius.circular(4)),
                         label: "District",
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Row(
+                  children: [
+                    Flexible(
+                        child: DropdownButtonFormField(
+                      onChanged: (value) {},
+                      decoration: const InputDecoration(filled: true),
+                      items: const [
+                        DropdownMenuItem(child: Text("Source de montagne")),
+                      ],
+                    )),
+                    const SizedBox(
+                      width: 16,
+                    ),
+                    Flexible(
+                      child: BtTextField(
+                        inputFormaters: [
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(4)),
+                        label: "Nombre de réservoir",
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 16,
+                    ),
+                    const Flexible(
+                      child: BtTextField(
+                        borderRadius: BorderRadius.all(Radius.circular(4)),
+                        label: "Capacité total réservoir (m3)",
                       ),
                     ),
                   ],
