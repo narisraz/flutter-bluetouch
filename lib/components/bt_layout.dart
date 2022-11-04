@@ -4,8 +4,11 @@ import 'package:bluetouch/pages/saep/list.dart';
 import 'package:flutter/material.dart';
 
 class BtLayout extends StatelessWidget {
+  final Widget child;
+
   const BtLayout({
     Key? key,
+    required this.child,
   }) : super(key: key);
 
   @override
@@ -20,7 +23,7 @@ class BtLayout extends StatelessWidget {
               BtAppBar(),
               Padding(
                 padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
-                child: ListSaep(),
+                child: SingleChildScrollView(child: ListSaep()),
               )
             ],
           ))

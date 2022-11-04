@@ -1,4 +1,5 @@
 import 'package:bluetouch/components/bt_layout.dart';
+import 'package:bluetouch/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,20 +12,28 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Bluetouch',
       debugShowCheckedModeBanner: false,
+      builder: (context, child) {
+        return BtLayout(
+          child: child ?? Container(),
+        );
+      },
       themeMode: ThemeMode.system,
       theme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.light,
-        colorSchemeSeed: Colors.blue,
-      ),
+          useMaterial3: true,
+          brightness: Brightness.light,
+          colorSchemeSeed: Colors.blue,
+          dataTableTheme: const DataTableThemeData(
+              headingTextStyle: TextStyle(fontWeight: FontWeight.bold))),
       darkTheme: ThemeData(
           useMaterial3: true,
           brightness: Brightness.dark,
-          colorSchemeSeed: Colors.blue),
-      home: const BtLayout(),
+          colorSchemeSeed: Colors.blue,
+          dataTableTheme: const DataTableThemeData(
+              headingTextStyle: TextStyle(fontWeight: FontWeight.bold))),
+      routerConfig: routes,
     );
   }
 }
