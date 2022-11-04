@@ -1,4 +1,3 @@
-import 'package:bluetouch/components/bt_layout.dart';
 import 'package:bluetouch/router.dart';
 import 'package:flutter/material.dart';
 
@@ -15,11 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Bluetouch',
       debugShowCheckedModeBanner: false,
-      builder: (context, child) {
-        return BtLayout(
-          child: child ?? Container(),
-        );
-      },
       themeMode: ThemeMode.system,
       theme: ThemeData(
           useMaterial3: true,
