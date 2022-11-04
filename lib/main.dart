@@ -14,19 +14,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Bluetouch',
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          colorSchemeSeed: Colors.blue,
-          dataTableTheme: const DataTableThemeData(
-              headingTextStyle: TextStyle(fontWeight: FontWeight.bold))),
+        useMaterial3: true,
+        brightness: Brightness.light,
+        colorSchemeSeed: Colors.blue,
+      ),
       darkTheme: ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.dark,
-          colorSchemeSeed: Colors.blue,
-          dataTableTheme: const DataTableThemeData(
-              headingTextStyle: TextStyle(fontWeight: FontWeight.bold))),
+        useMaterial3: true,
+        brightness: Brightness.dark,
+        colorSchemeSeed: Colors.blue,
+      ),
       routerConfig: router,
     );
   }

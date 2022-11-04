@@ -1,7 +1,5 @@
 import 'package:bluetouch/components/bt_text_title.dart';
 import 'package:bluetouch/components/bt_textfield.dart';
-// ignore: unnecessary_import
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
