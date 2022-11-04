@@ -7,22 +7,15 @@ class BtDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.all(0),
-      shape: const BeveledRectangleBorder(),
-      child: SizedBox(
-        width: 250,
-        child: ListView(
-          children: [
-            const DrawerHeader(child: FlutterLogo()),
-            ListTile(
-              onTap: () {},
-              leading: const Icon(Icons.water_damage),
-              title: const Text('SAEP'),
-            )
-          ],
-        ),
-      ),
+    return NavigationRail(
+      extended: true,
+      destinations: const [
+        NavigationRailDestination(
+            icon: Icon(Icons.dashboard), label: Text('Tableau de bord')),
+        NavigationRailDestination(
+            icon: Icon(Icons.water_drop_sharp), label: Text('SAEP')),
+      ],
+      selectedIndex: 1,
     );
   }
 }
