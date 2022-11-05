@@ -74,10 +74,22 @@ class NewSaep extends StatelessWidget {
                   children: [
                     Flexible(
                         child: DropdownButtonFormField(
+                      value: 0,
                       onChanged: (value) {},
                       decoration: const InputDecoration(filled: true),
                       items: const [
-                        DropdownMenuItem(child: Text("Source de montagne")),
+                        DropdownMenuItem(
+                          value: 0,
+                          child: Text("Source de montagne"),
+                        ),
+                        DropdownMenuItem(
+                          value: 1,
+                          child: Text("Rivière"),
+                        ),
+                        DropdownMenuItem(
+                          value: 2,
+                          child: Text("Réservoir"),
+                        ),
                       ],
                     )),
                     const SizedBox(
