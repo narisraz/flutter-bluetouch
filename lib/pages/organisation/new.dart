@@ -2,8 +2,8 @@ import 'package:bluetouch/components/bt_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class NewSaep extends StatelessWidget {
-  const NewSaep({super.key});
+class NewOrganisation extends StatelessWidget {
+  const NewOrganisation({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +11,8 @@ class NewSaep extends StatelessWidget {
       children: [
         const ListTile(
           leading: Icon(Icons.water_drop_sharp),
-          title: Text("SAEP"),
-          subtitle: Text("Saisissez les informations sur le SAEP"),
+          title: Text("ORGANISATION"),
+          subtitle: Text("Saisissez les informations sur le ORGANISATION"),
         ),
         const SizedBox(
           width: 16,

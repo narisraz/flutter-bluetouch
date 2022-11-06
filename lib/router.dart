@@ -1,6 +1,6 @@
 import 'package:bluetouch/components/bt_layout.dart';
-import 'package:bluetouch/pages/saep/list.dart';
-import 'package:bluetouch/pages/saep/new.dart';
+import 'package:bluetouch/pages/organisation/list.dart';
+import 'package:bluetouch/pages/organisation/new.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -12,7 +12,7 @@ final router = GoRouter(
           GoRoute(
             path: '/',
             builder: (BuildContext context, GoRouterState state) {
-              return const ListSaep();
+              return const ListOrganisation();
             },
           ),
           GoRoute(
@@ -20,15 +20,15 @@ final router = GoRouter(
               builder: ((context, state) => Container()),
               routes: [
                 GoRoute(
-                    path: 'saep',
+                    path: 'organisation',
                     builder: (BuildContext context, GoRouterState state) {
-                      return const ListSaep();
+                      return const ListOrganisation();
                     },
                     routes: [
                       GoRoute(
                         path: 'new',
                         builder: (BuildContext context, GoRouterState state) {
-                          return const NewSaep();
+                          return const NewOrganisation();
                         },
                       ),
                     ]),

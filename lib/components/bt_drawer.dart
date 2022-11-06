@@ -10,14 +10,14 @@ class BtDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return NavigationRail(
       onDestinationSelected: (value) => {
-        if (value == 1) {GoRouter.of(context).go('/admin/saep')}
+        if (value == 1) {GoRouter.of(context).go('/admin/organisation')}
       },
       extended: true,
       destinations: const [
         NavigationRailDestination(
             icon: Icon(Icons.dashboard), label: Text('Tableau de bord')),
         NavigationRailDestination(
-            icon: Icon(Icons.water_drop_sharp), label: Text('SAEP')),
+            icon: Icon(Icons.water_drop_sharp), label: Text('Organisation')),
       ],
       selectedIndex: 1,
     );
