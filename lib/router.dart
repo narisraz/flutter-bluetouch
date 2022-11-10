@@ -27,8 +27,10 @@ final router = GoRouter(
                     routes: [
                       GoRoute(
                         path: 'new',
-                        builder: (BuildContext context, GoRouterState state) {
-                          return const NewOrganisation();
+                        pageBuilder:
+                            (BuildContext context, GoRouterState state) {
+                          return const NoTransitionPage(
+                              child: NewOrganisation());
                         },
                       ),
                     ]),
