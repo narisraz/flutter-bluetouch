@@ -1,8 +1,6 @@
-import 'dart:developer';
-
 import 'package:bluetouch/components/bt_text_title.dart';
 import 'package:bluetouch/components/bt_textfield.dart';
-import 'package:bluetouch/domain/Organisme.dart';
+import 'package:bluetouch/models/organisme.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
